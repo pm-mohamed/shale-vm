@@ -1,0 +1,33 @@
+# Logs
+logs/
+*.log
+
+# Temp files
+temp/
+
+# IIS default error pages
+custerr/
+
+# IIS configuration history (may contain sensitive data)
+history/
+
+# iisnode logs
+iisnode/
+
+# Node modules
+node_modules/
+node_modules_old/
+
+# Python
+__pycache__/
+*.pyc
+
+# Claude Code
+.claude/
+
+# IIS web.config (contains environment-specific secrets)
+web.config
+
+# OS files
+Thumbs.db
+Desktop.ini

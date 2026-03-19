@@ -1,0 +1,291 @@
+{
+    "label_size": "325x138mm",
+    "layers": [
+        {
+            "name": "Logo",
+            "groups": [
+                {
+                    "name": "MainLogoGroup",
+                    "textFrames": [
+                        {
+                            "name": "ProductName",
+                            "content": "Biotin Komplex"
+                        },
+                        {
+                            "name": "AdditionalInfo",
+                            "content": "vegan"
+                        },
+                        {
+                            "name": "KeyFeatures",
+                            "content": "Hohe Bioverfügbarkeit\nBiotin, Zink, Selen\n56 Tabletten"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Layout",
+            "groups": [
+                {
+                    "name": "IngredientsTableGroup",
+                    "text_frames": [
+                        {
+                            "name": "IngredientsTableColumnNames",
+                            "content": "Inhaltsstoffe\tPro Einzelportion*\tNRV%**"
+                        },
+                        {
+                            "name": "IngredientsTableCells",
+                            "content": "Biotin\t10.000 µg\t20000\nZink\t10 mg\t100\nSelen\t55 µg\t100"
+                        },
+                        {
+                            "name": "IngredientsTableFootnotes",
+                            "content": "* Eine Tablette pro Tag mit reichlich Wasser einnehmen.\n** Prozentsatz %NRV der Nährstoffbezugswerte (Nutrient Reference Values) nach Verordnung (EU) Nr. 1169/2011."
+                        }
+                    ]
+                },
+                {
+                    "name": "MeasurementGroup",
+                    "groups": [
+                        {
+                            "name": "WeightGroup",
+                            "textFrames": [
+                                {
+                                    "name": "NetWeight",
+                                    "content": "320 g"
+                                }
+                            ]
+                        }
+                    ],
+                    "text_frames": [
+                        {
+                            "name": "Quantity",
+                            "content": "56 Tabletten"
+                        }
+                    ]
+                }
+            ],
+            "text_frames": [
+                {
+                    "name": "SupplementPurpose",
+                    "content": "Nahrungsergänzungsmittel für Biotingleichgewicht"
+                },
+                {
+                    "name": "IngredientsList",
+                    "prefix": "Zutaten: ",
+                    "content": "Akazienfaser, Zinkbisglycinat, D-Biotin, Selenhefe, L-Selenomethionin, Natriumselenit"
+                },
+                {
+                    "name": "ConsumptionRecommendation",
+                    "prefix": "Verzehrempfehlung: ",
+                    "content": "Eine Tablette pro Tag mit reichlich Wasser einnehmen."
+                },
+                {
+                    "name": "Warnings",
+                    "prefix": "Hinweise: ",
+                    "content": "Auf die Einnahme weiterer zinkhaltiger Nahrungsergänzungsmittel sollte verzichtet werden. Die angegebene empfohlene tägliche Verzehrmenge darf nicht überschritten werden. Nahrungsergänzungsmittel dürfen nicht als Ersatz für eine ausgewogene, abwechslungsreiche Ernährung und eine gesunde Lebensweise verwendet werden. Für Kinder und Jugendliche nicht geeignet. Geschlossen, kühl, trocken und außerhalb der Reichweite von Kindern aufbewahren."
+                }
+            ]
+        },
+        {
+            "name": "Languages",
+            "groups": [
+                {
+                    "name": "FrGroup",
+                    "text_frames": [
+                        {
+                            "name": "IngredientsTableColumnNames",
+                            "content": "Ingrédients\tPar portion individuelle*\tVNR%**"
+                        },
+                        {
+                            "name": "IngredientsTableCells",
+                            "content": "Biotine\t10 000 µg\t20000\nZinc\t10 mg\t100\nSélénium\t55 µg\t100"
+                        },
+                        {
+                            "name": "IngredientsTableFootnotes",
+                            "content": "* Prendre un comprimé par jour avec beaucoup d'eau.\n** Pourcentage %VNR des valeurs nutritionnelles de référence (Valeurs Nutritionnelles de Référence) selon le règlement (UE) n° 1169/2011."
+                        },
+                        {
+                            "name": "Quantity",
+                            "content": "56 comprimés"
+                        },
+                        {
+                            "name": "NetWeight",
+                            "content": "320 g"
+                        },
+                        {
+                            "name": "SupplementPurpose",
+                            "content": "Supplément alimentaire pour l'équilibre de la biotine"
+                        },
+                        {
+                            "name": "IngredientsList",
+                            "prefix": "Ingrédients: ",
+                            "content": "Fibre d'acacia, Bisglycinate de zinc, D-Biotine, Levure de sélénium, L-Sélénométhionine, Sélénite de sodium"
+                        },
+                        {
+                            "name": "ConsumptionRecommendation",
+                            "prefix": "Mode d’emploi: ",
+                            "content": "Prendre un comprimé par jour avec beaucoup d'eau."
+                        },
+                        {
+                            "name": "Warnings",
+                            "prefix": "Avertissement: ",
+                            "content": "Il est conseillé de ne pas prendre d'autres compléments alimentaires contenant du zinc. La dose quotidienne recommandée ne doit pas être dépassée. Les compléments alimentaires ne doivent pas être utilisés comme substitut à une alimentation équilibrée et variée et à un mode de vie sain. Non adapté aux enfants et adolescents. Conserver fermé, dans un endroit frais, sec et hors de portée des enfants."
+                        },
+                        {
+                            "name": "RecommendedDailyDose",
+                            "prefix": "Dose journalière recommandée: ",
+                            "content": "Un comprimé"
+                        }
+                    ]
+                },
+                {
+                    "name": "ItGroup",
+                    "text_frames": [
+                        {
+                            "name": "IngredientsTableColumnNames",
+                            "content": "Ingredienti\tPer porzione singola*\tVNR%**"
+                        },
+                        {
+                            "name": "IngredientsTableCells",
+                            "content": "Biotina\t10.000 µg\t20000\nZinco\t10 mg\t100\nSelenio\t55 µg\t100"
+                        },
+                        {
+                            "name": "IngredientsTableFootnotes",
+                            "content": "* Assumere una compressa al giorno con abbondante acqua.\n** Percentuale %VNR dei valori nutritivi di riferimento (Valori Nutritivi di Riferimento) in conformità al Regolamento (UE) N. 1169/2011."
+                        },
+                        {
+                            "name": "Quantity",
+                            "content": "56 compresse"
+                        },
+                        {
+                            "name": "NetWeight",
+                            "content": "320 g"
+                        },
+                        {
+                            "name": "SupplementPurpose",
+                            "content": "Integratore alimentare per l'equilibrio della biotina."
+                        },
+                        {
+                            "name": "IngredientsList",
+                            "prefix": "Ingredienti: ",
+                            "content": "Fibra di acacia, Bisglicinato di zinco, D-Biotina, Lievito di selenio, L-Seleniometionina, Selenito di sodio"
+                        },
+                        {
+                            "name": "ConsumptionRecommendation",
+                            "prefix": "Modalita' d'uso: ",
+                            "content": "Assunzione di una compressa al giorno con abbondante acqua."
+                        },
+                        {
+                            "name": "Warnings",
+                            "prefix": "Avvertenze: ",
+                            "content": "Si dovrebbe evitare l'assunzione di altri integratori alimentari contenenti zinco. Non superare la dose giornaliera consigliata. Gli integratori alimentari non devono essere utilizzati come sostituti di una dieta equilibrata e variata e di uno stile di vita sano. Non adatto a bambini e adolescenti. Conservare chiuso, in un luogo fresco, asciutto e fuori dalla portata dei bambini."
+                        },
+                        {
+                            "name": "RecommendedDailyDose",
+                            "prefix": "Dose giornaliera raccomandata: ",
+                            "content": "Una compressa"
+                        }
+                    ]
+                },
+                {
+                    "name": "EsGroup",
+                    "text_frames": [
+                        {
+                            "name": "IngredientsTableColumnNames",
+                            "content": "Componentes\tPor porción única*\tVRN%**"
+                        },
+                        {
+                            "name": "IngredientsTableCells",
+                            "content": "Biotina\t10.000 µg\t20000\nZinc\t10 mg\t100\nSelenio\t55 µg\t100"
+                        },
+                        {
+                            "name": "IngredientsTableFootnotes",
+                            "content": "* Tomar una tableta al día con abundante agua.\n** Porcentaje %VRN de los Valores de Referencia de Nutrientes (Nutrient Reference Values) según el Reglamento (UE) No. 1169/2011."
+                        },
+                        {
+                            "name": "Quantity",
+                            "content": "56 tabletas"
+                        },
+                        {
+                            "name": "NetWeight",
+                            "content": "320 g"
+                        },
+                        {
+                            "name": "SupplementPurpose",
+                            "content": "Suplemento dietético para el equilibrio de la biotina"
+                        },
+                        {
+                            "name": "IngredientsList",
+                            "prefix": "Ingredientes: ",
+                            "content": "Fibra de acacia, Bisglicinato de zinc, D-Biotina, Levadura de selenio, L-Seleniometionina, Selenito de sodio"
+                        },
+                        {
+                            "name": "ConsumptionRecommendation",
+                            "prefix": "Modo de empleo: ",
+                            "content": "Tomar una tableta al día con abundante agua."
+                        },
+                        {
+                            "name": "Warnings",
+                            "prefix": "Advertencias: ",
+                            "content": "Se debe evitar el uso de otros suplementos dietéticos que contengan zinc. No exceder la dosis diaria recomendada. Los suplementos dietéticos no deben utilizarse como sustitutos de una dieta equilibrada y variada ni de un estilo de vida saludable. No apto para niños y adolescentes. Mantener cerrado, fresco, seco y fuera del alcance de los niños."
+                        },
+                        {
+                            "name": "RecommendedDailyDose",
+                            "prefix": "Dosis diaria recomendada: ",
+                            "content": "Una tableta"
+                        }
+                    ]
+                },
+                {
+                    "name": "NlGroup",
+                    "text_frames": [
+                        {
+                            "name": "IngredientsTableColumnNames",
+                            "content": "Ingrediënten\tPer enkele portie*\tADH%**"
+                        },
+                        {
+                            "name": "IngredientsTableCells",
+                            "content": "Biotine\t10.000 µg\t20000\nZink\t10 mg\t100\nSelenium\t55 µg\t100"
+                        },
+                        {
+                            "name": "IngredientsTableFootnotes",
+                            "content": "* Neem één tablet per dag met voldoende water in.\n** Percentage %ADH van de voedingsreferentiewaarden (Nutrient Reference Values) volgens Verordening (EU) Nr. 1169/2011."
+                        },
+                        {
+                            "name": "Quantity",
+                            "content": "56 tabletten"
+                        },
+                        {
+                            "name": "NetWeight",
+                            "content": "320 g"
+                        },
+                        {
+                            "name": "SupplementPurpose",
+                            "content": "Voedingssupplement voor biotinebalans,"
+                        },
+                        {
+                            "name": "IngredientsList",
+                            "prefix": "Ingrediënten: ",
+                            "content": "Acacia vezel, Zinkbisglycinaat, D-Biotine, Seleniummest, L-Seleniummethionine, Natriumseleniet."
+                        },
+                        {
+                            "name": "ConsumptionRecommendation",
+                            "prefix": "Gebruiksaanwijzing: ",
+                            "content": "Neem één tablet per dag met voldoende water in."
+                        },
+                        {
+                            "name": "Warnings",
+                            "prefix": "Waarschuwingen: ",
+                            "content": "Men moet het gebruik van andere zinkhoudende voedingssupplementen vermijden. De voorgestelde aanbevolen dagelijkse hoeveelheid mag niet overschreden worden. Voedingssupplementen mogen niet worden gebruikt als vervanging voor een uitgebalanceerd en gevarieerd dieet en een gezonde levensstijl. Niet geschikt voor kinderen en adolescenten. Bewaar gesloten, koel, droog en buiten het bereik van kinderen."
+                        },
+                        {
+                            "name": "RecommendedDailyDose",
+                            "prefix": "Aanbevolen dagelijkse dosis: ",
+                            "content": "Eén tablet"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

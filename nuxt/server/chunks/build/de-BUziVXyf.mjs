@@ -1,0 +1,26 @@
+const resource = {
+  "app": {
+    "name": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Supplement Hub AI Label Automator" } }
+  },
+  "mainNavigation": {
+    "areas": {
+      "upload": {
+        "name": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Upload" } }
+      }
+    }
+  },
+  "pages": {
+    "start": {
+      "name": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Start" } }
+    },
+    "upload": {
+      "name": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Upload" } }
+    }
+  },
+  "messages": {
+    "leaving unfinished state": { "t": 0, "b": { "t": 2, "i": [{ "t": 3 }], "s": "Sie sind dabei ein bisher ungespeichertes Formular zu verlassen, wenn sie fortfahren wird dieser Stand verworfen. Fortfahren?" } }
+  }
+};
+
+export { resource as default };
+//# sourceMappingURL=de-BUziVXyf.mjs.map

@@ -1,0 +1,9 @@
+Flask~=3.1.0
+Flask-Cors~=5.0.0
+openai~=1.57.4
+pymupdf~=1.25.1
+pydantic~=2.10.3
+waitress==3.0.2
+psutil~=6.1.1
+python-barcode~=0.15.1
+cairosvg~=2.7.1
