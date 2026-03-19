@@ -2,6 +2,21 @@
 
 STANDARD_INGREDIENT_WARNING = "Die angegebene empfohlene tägliche Verzehrmenge darf nicht überschritten werden. Nahrungsergänzungsmittel dürfen nicht als Ersatz für eine ausgewogene, abwechslungsreiche Ernährung und eine gesunde Lebensweise verwendet werden. Für Kinder und Jugendliche nicht geeignet. Geschlossen, kühl, trocken und außerhalb der Reichweite von Kindern aufbewahren. Nicht für Schwangere und Stillende geeignet."
 
+LANGUAGE_PREFIXES = {
+    "DE": {
+        "ingredients_list": "Zutaten: ",
+        "consumption_recommendation": "Verzehrempfehlung: ",
+        "warnings": "Hinweise: ",
+        "lot_info": "Lot Nr./ Mindestens haltbar bis Ende:\nSiehe Bodenaufdruck",
+    },
+    "EN": {
+        "ingredients_list": "Ingredients: ",
+        "consumption_recommendation": "Consumption recommendation: ",
+        "warnings": "Warnings: ",
+        "lot_info": "Lot No./ Best before end:\nSee bottom imprint",
+    },
+}
+
 MARKDOWN_EXTRACTION_PROMPT = """You are an expert in text extraction and Markdown formatting for medicine or dietary supplements. Your task is to convert the content of the provided image of a PDF page into **accurate and structured Markdown**. All text, tables, headings, bullet points, and formatting should be **precisely** extracted and represented in Markdown without any alterations or omissions.
 
 ---
@@ -132,8 +147,9 @@ def get_translation_prompt(input_data, target_language):
   "quantity": {input_data["quantity"]}
 }}"""
 
-def get_config(input_data, input_data_french, input_data_italian, input_data_spanish, input_data_dutch):
-	ingredients_table_column_names, ingredients_table_cells = input_data["ingredients_table"].split('\n', 1)
+def get_config(input_data, input_data_french, input_data_italian, input_data_spanish, input_data_dutch, main_language="DE", main_data_override=None):
+	layout_data = main_data_override if main_data_override else input_data
+	ingredients_table_column_names, ingredients_table_cells = layout_data["ingredients_table"].split('\n', 1)
 	ingredients_table_column_names_french, ingredients_table_cells_french = input_data_french[
 		"ingredients_table"].split('\n', 1)
 	ingredients_table_column_names_italian, ingredients_table_cells_italian = input_data_italian[
@@ -184,7 +200,7 @@ def get_config(input_data, input_data_french, input_data_italian, input_data_spa
 							},
 							{
 								"name": "IngredientsTableFootnotes",
-								"content": input_data["ingredients_table_footnotes"]
+								"content": layout_data["ingredients_table_footnotes"]
 							}
 						]
 					},
@@ -204,7 +220,7 @@ def get_config(input_data, input_data_french, input_data_italian, input_data_spa
 						"textFrames": [
 							{
 								"name": "Quantity",
-								"content": input_data["quantity"]
+								"content": layout_data["quantity"]
 							}
 						]
 					}
@@ -212,16 +228,16 @@ def get_config(input_data, input_data_french, input_data_italian, input_data_spa
 				"textFrames": [
 					{
 						"name": "SupplementPurpose",
-						"content": input_data["supplement_purpose"]
+						"content": layout_data["supplement_purpose"]
 					},
 					{
 						"name": "IngredientsList",
-						"prefix": "Zutaten: ",
-						"content": input_data["ingredients_list"]
+						"prefix": LANGUAGE_PREFIXES[main_language]["ingredients_list"],
+						"content": layout_data["ingredients_list"]
 					},
 					{
 						"name": "Guidelines",
-						"content": "Verzehrempfehlung: " + input_data["consumption_recommendation"] + "\n\n" + "Hinweise: " + input_data["warnings"] + "\n\n" + "Lot Nr./ Mindestens haltbar bis Ende:\nSiehe Bodenaufdruck"
+						"content": LANGUAGE_PREFIXES[main_language]["consumption_recommendation"] + layout_data["consumption_recommendation"] + "\n\n" + LANGUAGE_PREFIXES[main_language]["warnings"] + layout_data["warnings"] + "\n\n" + LANGUAGE_PREFIXES[main_language]["lot_info"]
 					}
 				]
 			},
