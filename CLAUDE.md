@@ -66,10 +66,10 @@ All endpoints require a `Token` header for authentication.
 |--------|-----------|-------------|
 | GET    | `/labels` | List available label templates (reads .ai files from labels/) |
 | POST   | `/upload` | Upload PDF → converts to images → GPT-4o extracts structured label data as JSON |
-| POST   | `/export` | Accepts label JSON → translates to FR/IT/ES/NL → generates barcode → triggers Illustrator → returns .ai file |
+| POST   | `/export` | Accepts label JSON → translates to FR/IT/ES/NL (+ EN if main language is English) → generates barcode → triggers Illustrator → returns .ai file |
 
 ### Required Export Fields
-`label_size`, `barcode`, `product_name`, `key_features`, `additional_info`, `supplement_purpose`, `consumption_recommendation`, `ingredients_table`, `ingredients_table_footnotes`, `recommended_daily_dose`, `ingredients_list`, `warnings`, `quantity`, `net_weight`
+`label_size`, `barcode`, `product_name`, `key_features`, `additional_info`, `supplement_purpose`, `consumption_recommendation`, `ingredients_table`, `ingredients_table_footnotes`, `recommended_daily_dose`, `ingredients_list`, `warnings`, `quantity`, `net_weight`, `main_language` (optional, `"DE"` default or `"EN"`)
 
 ## Environment Variables
 
@@ -93,7 +93,7 @@ All endpoints require a `Token` header for authentication.
 - **Retry strategy:** 5 attempts for AI extraction, 5 attempts per language translation, 3 attempts for file save.
 - **Parallel processing:** `ThreadPoolExecutor` for PDF pages, `concurrent.futures` for translations.
 - **Font enforcement:** Legal minimums enforced per label area (7.1pt for labels ≥80cm², 5.0pt for <80cm²).
-- **Languages:** German (source), French, Italian, Spanish, Dutch (translations).
+- **Languages:** German (source, default main language) or English (optional main language). Translations: French, Italian, Spanish, Dutch.
 - **Illustrator layer structure:** Logo → Layout → Languages → Barcode+Recycling.
 
 ## Dependencies
