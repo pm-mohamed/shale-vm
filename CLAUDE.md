@@ -82,6 +82,10 @@ All endpoints require a `Token` header for authentication.
 | `HTTP_PLATFORM_PORT` | IIS (automatic) | Port assigned by IIS httpPlatform handler |
 | `API_HOST`           | nuxt/web.config | Backend URL (default: `http://localhost:8080`) |
 
+## Important Rules
+
+- **Never modify files that are in .gitignore without explicit user permission.** This includes web.config files, logs, temp files, node_modules, and __pycache__.
+
 ## Key Conventions
 
 - **web.config files are gitignored** — they contain secrets (API keys, tokens). Each IIS site has its own web.config.
