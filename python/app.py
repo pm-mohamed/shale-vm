@@ -202,9 +202,18 @@ def export_file():
 		run_illustrator_script(illustrator_script_path)
 
 		timeout = 1200  # Wait up to 20 minutes for the AI file to be generated
+		startup_grace = 30  # Wait up to 30 seconds for Illustrator to launch
 		output_filename = "output.ai"
 		output_folder = app.config['OUTPUT_FOLDER']
 		ai_file_path = os.path.join(output_folder, output_filename)
+
+		# Wait for Illustrator to start before monitoring
+		while startup_grace > 0 and not is_illustrator_running():
+			if os.path.exists(ai_file_path):
+				break
+			time.sleep(1)
+			startup_grace -= 1
+			print(f"Waiting for Illustrator to start... ({30 - startup_grace}s)", flush=True)
 
 		while timeout > 0:
 			if os.path.exists(ai_file_path):
