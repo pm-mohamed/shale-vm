@@ -5241,6 +5241,8 @@ const _sfc_main$3 = {
     const warnings = ref("");
     const quantity = ref("");
     const netWeight = ref("");
+    const mainLanguage = ref("Deutsch");
+    const mainLanguageOptions = ["Deutsch", "English"];
     function isExportable() {
       const fields = [
         labelSize.value,
@@ -5273,7 +5275,8 @@ const _sfc_main$3 = {
         ingredients_list: ingredientsList.value,
         warnings: warnings.value,
         quantity: quantity.value,
-        net_weight: netWeight.value
+        net_weight: netWeight.value,
+        main_language: mainLanguage.value === "English" ? "EN" : "DE"
       };
       emit("labelObject", labelObject);
       emit("next");
@@ -5294,6 +5297,8 @@ const _sfc_main$3 = {
       warnings,
       quantity,
       netWeight,
+      mainLanguage,
+      mainLanguageOptions,
       isExportable,
       handleExport
     };
@@ -5318,7 +5323,14 @@ function _sfc_ssrRender$3(_ctx, _push, _parent, _attrs, $props, $setup, $data, $
     disabled: $setup.labelSizes.length === 0,
     "select-class": "bg-supplementhubgray-900 text-white ring-1 ring-supplementhubgray-700 focus:ring-1 focus:ring-supplementhubgray-600"
   }, null, _parent));
-  _push(`</div><div class="w-full flex-1 flex flex-col"><span> Barcode </span>`);
+  _push(`</div><div class="w-full flex flex-col formwidth:w-[48.5%]"><span> Hauptsprache </span>`);
+  _push(ssrRenderComponent(_component_USelectMenu, {
+    modelValue: $setup.mainLanguage,
+    "onUpdate:modelValue": ($event) => $setup.mainLanguage = $event,
+    options: $setup.mainLanguageOptions,
+    "select-class": "bg-supplementhubgray-900 text-white ring-1 ring-supplementhubgray-700 focus:ring-1 focus:ring-supplementhubgray-600"
+  }, null, _parent));
+  _push(`</div></div><div class="text-group flex flex-wrap gap-5"><div class="w-full flex-1 flex flex-col"><span> Barcode </span>`);
   _push(ssrRenderComponent(_component_UInput, {
     modelValue: $setup.barcode,
     "onUpdate:modelValue": ($event) => $setup.barcode = $event,

@@ -158,7 +158,13 @@ def export_file():
 		if os.path.exists(barcode_path):
 			os.remove(barcode_path)
 
+		main_language = json_data.get("main_language", "DE")
+		if main_language not in ("DE", "EN"):
+			return jsonify({"error": "Invalid main_language. Must be 'DE' or 'EN'."}), 400
+
 		target_languages = ["french", "italian", "spanish", "dutch"]
+		if main_language == "EN":
+			target_languages.append("english")
 
 		def translate_with_retries(data, language):
 			for attempt in range(5):
@@ -181,10 +187,14 @@ def export_file():
 			results = {future_to_language[future]: future.result() for future in
 					   concurrent.futures.as_completed(future_to_language)}
 
+		base_languages = ["french", "italian", "spanish", "dutch"]
 		if any("error" in results[lang] for lang in target_languages):
 			return jsonify({"error": "Failed to translate to all target languages", "details": results}), 500
 
-		fill_and_save_config_json(config_path, json_data, *[results[lang].model_dump() for lang in target_languages])
+		main_data_override = results["english"].model_dump() if main_language == "EN" else None
+
+		fill_and_save_config_json(config_path, json_data, *[results[lang].model_dump() for lang in base_languages],
+								  main_language=main_language, main_data_override=main_data_override)
 
 		generate_and_save_barcode(json_data['barcode'], barcode_path)
 
@@ -192,9 +202,18 @@ def export_file():
 		run_illustrator_script(illustrator_script_path)
 
 		timeout = 1200  # Wait up to 20 minutes for the AI file to be generated
+		startup_grace = 30  # Wait up to 30 seconds for Illustrator to launch
 		output_filename = "output.ai"
 		output_folder = app.config['OUTPUT_FOLDER']
 		ai_file_path = os.path.join(output_folder, output_filename)
+
+		# Wait for Illustrator to start before monitoring
+		while startup_grace > 0 and not is_illustrator_running():
+			if os.path.exists(ai_file_path):
+				break
+			time.sleep(1)
+			startup_grace -= 1
+			print(f"Waiting for Illustrator to start... ({30 - startup_grace}s)", flush=True)
 
 		while timeout > 0:
 			if os.path.exists(ai_file_path):
@@ -210,6 +229,7 @@ def export_file():
 		return jsonify({"error": "AI file not found after processing"}), 500
 
 	except Exception as e:
+		print(f"Export error: {str(e)}", flush=True)
 		return jsonify({"error": str(e)}), 500
 
 	finally:

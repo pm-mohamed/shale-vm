@@ -198,8 +198,9 @@ def format_ingredients_table_footnotes(product_label_information):
 
 
 def fill_and_save_config_json(config_path, input_data, input_data_french, input_data_italian, input_data_spanish,
-							  input_data_dutch):
-	config = get_config(input_data, input_data_french, input_data_italian, input_data_spanish, input_data_dutch)
+							  input_data_dutch, main_language="DE", main_data_override=None):
+	config = get_config(input_data, input_data_french, input_data_italian, input_data_spanish, input_data_dutch,
+						main_language=main_language, main_data_override=main_data_override)
 
 	try:
 		with open(config_path, "w", encoding="utf-8") as json_file:
